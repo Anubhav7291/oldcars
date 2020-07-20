@@ -1,0 +1,193 @@
+<div id="sample">
+<style type="text/css">
+#sample {border:1px dotted #666;text-align:center;}
+#sample h2 {text-align:center;}
+#sample p {text-align:center;padding:.4em 3em 0em;}
+#my-form #align {box-sizing:border-box;width:96%;text-align:center;margin:0 2%;padding:2em;}
+#my-form .data-entry {padding:.5em 8%;}
+#my-form textarea {padding:.1em 8%;}
+#my-form p {margin:.1em 0;text-align:center;}
+#my-form select {margin-bottom:1em;}
+#my-form select {margin-bottom:1em;font-size:95%;padding:.1em .5em;}
+#my-form .button {width:80px;height:30px;font-size:110%;margin:.4em;}
+</style>
+<h2>Old Car Valuation</h2>
+<p>Fill the Fields Below.</p>
+<form action="{{ url_for('predict')}}"method="post">
+<div id="align">
+
+<label for="Name">Name Of Car:</label><br />
+
+    <select id="Name" name="Name"> 
+ <option value="0">Ambassador Classic Nova Diesel</option> 
+      <option value="1">Audi A3 35 TDI Attraction</option> 
+      <option value="2">Audi A3 35 TDI Premium</option>
+      <option value="3">Audi A3 35 TDI Premium Plus</option> 
+      <option value="4">Audi A3 35 TDI Technology</option> 
+      <option value="5">Audi A4 1.8 TFSI</option> 
+      <option value="6">Audi A4 1.8 TFSI Technology Edition</option> 
+      <option value="7">Audi A4 2.0 TDI</option> 
+      <option value="8">Audi A4 2.0 TDI 177 Bhp Premium Plus</option> 
+      <option value="9">Audi A4 2.0 TDI 177 Bhp Technology Edition</option> 
+      <option value="10">Audi A4 2.0 TDI Celebration Edition</option> 
+      <option value="55">Audi Q5 3.0 TDI Quattro Technology</option> 
+      <option value="61">Audi Q7 35 TDI Quattro Premium Plus</option> 
+      <option value="70">BMW 1 Series 118d Base</option> 
+      <option value="73">BMW 3 Series 318i Sedan</option> 
+      <option value="77">BMW 3 Series 320d GT Luxury Line</option> 
+      <option value="165">Chevrolet Beat Diesel</option> 
+      <option value="223">Fiat Linea T-Jet Active</option> 
+      <option value="241">Ford EcoSport 1.5 Petrol Titanium</option> 
+      <option value="272">Ford Endeavour 4x2 XLT</option> 
+      <option value="335">Honda Accord V6 AT</option> 
+      <option value="390">Honda Brio EX MT</option> 
+      <option value="519">Hyundai Creta 1.6 SX Plus</option> 
+      <option value="668">Hyundai i10 Asta 1.2 AT with Sunroof</option> 
+      <option value="779">Land Rover Discovery</option> 
+      <option value="1098">Maruti Ritz ZXi</option> 
+      <option value="1189">'Maruti Wagon R Duo LX BSIII</option> 
+      <option value="1264">Mercedes-Benz</option> 
+      <option value="1382">Nissan Micra XL</option> 
+      <option value="1437">Renault Duster</option>
+      <option value="1460">Renault Kwid</option> 
+      <option value="1715">Toyota Etios</option> 
+      <option value="1859">Volkswagen Vento</option> 
+      <option value="1860">Volvo</option> 
+      <option value="1630">Tata New Safari</option> 
+    
+
+</select><br /><br />
+
+
+
+<label for="Location">Location:</label><br />
+
+ <select id="Location" name="Location"> 
+      <option value="0">Ahmedabad</option> 
+      <option value="1">Bangalore</option>
+      <option value="2">Chennai</option> 
+      <option value="3">Coimbatore</option> 
+      <option value="4">Delhi</option> 
+      <option value="5">Hyderabad</option> 
+      <option value="6">Jaipur</option> 
+      <option value="7">Kochi</option> 
+      <option value="8">kolkata</option> 
+      <option value="9">Mumbai</option> 
+      <option value="10">Pune</option> 
+
+</select><br /><br />
+
+
+
+
+
+
+<label for="Year">Year:</label><br />
+
+<select id="Year" name="Year"> 
+      <option value="2000">2000</option> 
+      <option value="2001">2001</option>
+      <option value="2002">2002</option> 
+      <option value="2003">2003</option> 
+      <option value="2004">2004</option> 
+      <option value="2005">2005</option> 
+      <option value="2006">2006</option> 
+      <option value="2007">2007</option> 
+      <option value="2008">2008</option> 
+      <option value="2009">2009</option> 
+      <option value="2010">2010</option>
+ <option value="2011">2011</option> 
+ <option value="2012">2012</option> 
+ <option value="2013">2013</option> 
+ <option value="2014">2014</option> 
+ <option value="2015">2015</option> 
+ <option value="2016">2016</option> 
+ <option value="2017">2017</option> 
+ <option value="2018">2018</option> 
+<option value="2019">2019</option> 
+<option value="2020">2020</option> 
+ 
+
+</select><br /><br />
+
+
+
+ <form action="/result" method="POST"> 
+   <label for="	Kilometers_Driven">Kilometers_Driven:</label><br />
+    <input type="text" id="Kilometers_Driven" name="Kilometers_Driven"> 
+    <br> 
+</select><br /><br />
+
+
+
+<label for="Fuel-Type">Fuel-Type:</label><br />
+
+<select id="Fuel-Type" name="Fuel-Type"> 
+      <option value="0">CNG</option> 
+      <option value="1">Diesel</option>
+      <option value="2">Electric</option> 
+      <option value="3">LPG</option> 
+      <option value="4">Petrol</option> 
+</select><br /><br />
+
+
+<label for="Tranmission">Tranmission:</label><br />
+
+<select id="Transmission" name="Transmission"> 
+      <option value="0">Automatic</option> 
+      <option value="1">Manual</option>
+
+</select><br /><br />
+
+<label for="Owner_Type">Owner_Type:</label><br />
+<select id="Owner_Type" name="Owner_Type"> 
+      <option value="0">First</option> 
+      <option value="2">Second</option>
+       <option value="3">Third</option> 
+      <option value="4">Fourth or Above</option>
+
+</select><br /><br />
+
+ <form action="/result" method="POST"> 
+   <label for="Mileage">Mileage(km/l) (numeric values only):</label><br />
+    <input type="text" id="Mileage" name="Mileage"> 
+    <br> 
+</select><br /><br />
+
+ <form action="/result" method="POST"> 
+   <label for="Engine">Engine(in CC) (numeric values only):</label><br />
+    <input type="text" id="Engine" name="Engine"> 
+    <br> 
+</select><br /><br />
+
+
+ <form action="/result" method="POST"> 
+   <label for="Power">Power(in bhp) (numeric values only):</label><br />
+    <input type="text" id="Power" name="Power"> 
+    <br> 
+</select><br /><br />
+
+
+<label for="Seats">Seats:</label><br />
+
+<select id="Seats" name="Seats"> 
+      <option value="4">4</option> 
+      <option value="5">5</option>
+      <option value="6">6</option> 
+      <option value="7">7</option> 
+      <option value="8">8</option> 
+</select><br /><br />
+
+
+
+
+<span><input type="reset" class="button" value="RESET" />
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button><br />
+
+ </form>
+
+{{ prediction_text }}
+
+</div><!--end div align-->
+</form>
+</div><!--end div sample-->
